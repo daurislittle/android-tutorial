@@ -20,10 +20,13 @@ class CustomSnackbar(parent: ViewGroup, content: CustomSnackbarView) : BaseTrans
     companion object {
         fun make(view: View) : CustomSnackbar{
 
+            //set parent for this view
             val parent = view.findParent() ?: throw IllegalArgumentException("No suitable parent found from the correct view. Please correct.")
 
+            //custom view inflated
             val customView = LayoutInflater.from(view.context).inflate(R.layout.activity_snackbar, parent, false) as CustomSnackbarView
 
+            //creation and return this new snackbar
             return CustomSnackbar(parent, customView)
         }
 

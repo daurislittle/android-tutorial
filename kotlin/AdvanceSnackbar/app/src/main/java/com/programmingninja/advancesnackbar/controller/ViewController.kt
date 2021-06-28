@@ -12,11 +12,11 @@ internal fun View?.findParent(): ViewGroup? {
 
     do {
         if (view is CoordinatorLayout) {
-            //the Coordinatorlayout has been found
+            //the Coordinator layout has been found
             return view
         } else if (view is FrameLayout) {
             if (view.id == android.R.id.content) {
-                //
+                //coordinator layout not found so we need to use the appropriate hierarchy
                 return view
             } else {
                 //if no view assign the fallback
