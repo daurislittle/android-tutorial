@@ -31,5 +31,4 @@ class CustomSnackbar(parent: ViewGroup, content: CustomSnackbarView) : BaseTrans
         }
 
     }
-
 }
