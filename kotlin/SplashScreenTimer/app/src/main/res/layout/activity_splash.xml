@@ -8,11 +8,11 @@
     android:background="#e6e6e6">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
         android:id="@+id/img_SplashImage"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_marginTop="250dp"/>
+        android:src="@drawable/dauris_l_logo"
+        android:layout_marginTop="225dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
@@ -25,14 +25,15 @@
         android:textColor="@color/black"
         android:padding="30dp"/>
 
-    <androidx.core.widget.ContentLoadingProgressBar
+    <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pb_Spinner"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:indeterminateTint="@color/black" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_notification"
