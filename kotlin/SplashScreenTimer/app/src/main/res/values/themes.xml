@@ -15,7 +15,7 @@
     </style>
 
     <!-- This styling is for the splash screen -->
-    <style name="Theme.AppCompat.NoActionBar">
+    <style name="Theme.Splash" parent="Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
