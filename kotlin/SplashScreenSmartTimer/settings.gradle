@@ -1,0 +1,2 @@
+rootProject.name = "Splash Screen-Smart Timer"
+include ':app'
