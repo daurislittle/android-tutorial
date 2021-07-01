@@ -15,9 +15,14 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         //fire after timer expires
+        timedSplashScreen()
+    }
+
+
+    private fun timedSplashScreen() {
         Handler().postDelayed({
             //start the main activity
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }, SPLASH_TIMER)
     }
 }
