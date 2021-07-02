@@ -8,11 +8,11 @@
     android:background="#e6e6e6">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
         android:id="@+id/img_SplashImage"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_marginTop="250dp"/>
+        android:src="@drawable/dauris_l_logo"
+        android:layout_marginTop="220dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
         android:id="@+id/tv_notification"
         android:text="Design by The Programming Ninja"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="155dp"
         android:textSize="15dp"
         android:padding="15dp"
         android:textColor="@color/black"
