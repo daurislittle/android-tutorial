@@ -13,10 +13,14 @@ class SmartSplashActvity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_smart_splash_actvity)
 
-        val sp = getPreferences(Context.MODE_PRIVATE)
+        splashScreenTimer()
+    }
+
+    private fun splashScreenTimer() {
+        val sp = getPreferences(MODE_PRIVATE)
         val firstLaunchPrefKey = "pref_first_launch"
 
-        val splashDuration = when(sp.getBoolean(firstLaunchPrefKey, true)) {
+        val splashDuration = when (sp.getBoolean(firstLaunchPrefKey, true)) {
             true -> {
                 //
                 sp.edit().putBoolean(firstLaunchPrefKey, false).apply()
@@ -28,6 +32,10 @@ class SmartSplashActvity : AppCompatActivity() {
             }
         }
 
+        splashScreenDuration(splashDuration)
+    }
+
+    private fun splashScreenDuration(splashDuration: Int) {
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
         }, splashDuration.toLong())
