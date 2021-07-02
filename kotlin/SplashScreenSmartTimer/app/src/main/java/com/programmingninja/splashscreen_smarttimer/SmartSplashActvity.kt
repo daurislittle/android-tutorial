@@ -13,10 +13,10 @@ class SmartSplashActvity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_smart_splash_actvity)
 
-        splashScreenTimer()
+        splashScreenKey()
     }
 
-    private fun splashScreenTimer() {
+    private fun splashScreenKey() {
         val sp = getPreferences(MODE_PRIVATE)
         val firstLaunchPrefKey = "pref_first_launch"
 
