@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
         amb.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 String msg = amb.etMessage.getText().toString();
-                if (!msg.isEmpty()) Toast.makeText(v.getContext(), amb.etMessage.getText().toString(), Toast.LENGTH_SHORT).show();
-                else Toast.makeText(v.getContext(), "Message is empty", Toast.LENGTH_SHORT).show();
+                if (!msg.isEmpty()) Snackbar.make(amb.clLayer, amb.etMessage.getText().toString(), Snackbar.LENGTH_SHORT).show();
+                else Snackbar.make(amb.clLayer, "Message is empty", Snackbar.LENGTH_SHORT).show();
             }
         });
 
