@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llc_rootLayout"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <!-- layout holder for image -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/llc_imageLayout">
+
+        <!-- image display upon receiving notification -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/iv_notificationImage"
+            android:padding="5dp"
+            android:src="@drawable/ic_launcher_background"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- layout holder for header and body text -->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/llc_bodyLayout"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="5dp">
+
+        <!-- text display for header upon receiving notification -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_header"
+            android:text="Hello Sir"
+            android:textColor="#000" />
+
+        <!-- text display for body upon receiving notification -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_body"
+            android:text="What can i do for you"
+            android:textColor="#000"
+            android:textSize="15sp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
