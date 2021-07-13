@@ -1,4 +1,7 @@
 package com.programmingninja.fcmpushnotification.receiver;
 
-public class FirebaseMessageReceiver {
+import com.google.firebase.messaging.FirebaseMessagingService;
+
+public class FirebaseMessageReceiver extends FirebaseMessagingService {
+
 }
