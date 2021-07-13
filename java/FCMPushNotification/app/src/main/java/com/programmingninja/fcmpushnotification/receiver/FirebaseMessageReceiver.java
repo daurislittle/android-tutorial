@@ -23,8 +23,6 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
 
-
-
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
 
