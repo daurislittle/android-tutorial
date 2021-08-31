@@ -18,29 +18,77 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.txtInputEditEmail.addTextChangedListener(FieldValidation(binding.txtInputEditEmail))
-        binding.txtInputEditFname.addTextChangedListener(FieldValidation(binding.txtInputEditFname))
-        binding.txtInputEditLname.addTextChangedListener(FieldValidation(binding.txtInputEditLname))
-        binding.txtInputEditPass.addTextChangedListener(FieldValidation(binding.txtInputEditPass))
+        binding.txtInputEditEmail.addTextChangedListener(ValidateFieldChange(binding.txtInputEditEmail))
+        binding.txtInputEditFname.addTextChangedListener(ValidateFieldChange(binding.txtInputEditFname))
+        binding.txtInputEditLname.addTextChangedListener(ValidateFieldChange(binding.txtInputEditLname))
+        binding.txtInputEditPass.addTextChangedListener(ValidateFieldChange(binding.txtInputEditPass))
 
         binding.btnSignup.setOnClickListener {
-            //if statement for validation
-            Snackbar.make(it, "validated", Snackbar.LENGTH_SHORT).show()
-        }
 
-        setContentView(R.layout.activity_main)
+            //review validation on fields
+            if (fieldValidation()) {
+                Snackbar.make(it, "validated", Snackbar.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    /**
+     * validate fields
+     */
+
+    private fun  fieldValidation() : Boolean = validateName() && validateEmail() && validatePassword()
+
+    /**
+     * fields validation that review that the following fields are not empty
+     *  - validatePassword (will check that password is not empty)
+     *  - validateEmail (will check that email is not empty)
+     *  - validateName (will check first & last name is not empty)
+     */
+    private fun validatePassword(): Boolean {
+        if (binding.txtInputEditPass.text.toString().trim().isEmpty()) {
+
+            return false
+        } else {
+
+        }
+        return true
+    }
+
+    private fun validateEmail(): Boolean {
+        if (binding.txtInputEditEmail.text.toString().trim().isEmpty()) {
+
+            return false
+        } else {
+           
+        }
+        return true
+    }
+
+    private fun validateName(): Boolean {
+
+        if (binding.txtInputEditFname.text.toString().trim().isEmpty()) {
+
+            return false
+        } else if (binding.txtInputEditLname.text.toString().trim().isEmpty()) {
+
+            return false
+        } else {
+
+        }
+        return true
     }
 
     /**
      * watch the fields for changes
      */
-    inner class FieldValidation(private val view: View) : TextWatcher {
+    inner class ValidateFieldChange(private val view: View) : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             TODO("Not yet implemented")
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            //check the elements of each fields and apply response
+            //check the elements of each fields and apply response.
+            TODO("Not yet implemented")
         }
 
         override fun afterTextChanged(s: Editable?) {
