@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtLayout_fname"
 
-            android:hint="first name"
+            android:hint="First Name"
             android:layout_marginTop="10dp"
             app:endIconMode="clear_text"
             app:errorEnabled="true"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtLayout_lname"
             android:layout_marginTop="5dp"
-            android:hint="last name"
+            android:hint="Last Name"
             app:endIconMode="clear_text"
             app:errorEnabled="true">
 
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtLayout_email"
             android:layout_marginTop="5dp"
-            android:hint="email"
+            android:hint="Email"
             app:endIconMode="clear_text"
             app:errorEnabled="true">
 
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtLayout_pass"
             android:layout_marginTop="5dp"
-            android:hint="email"
+            android:hint="Password"
             app:endIconMode="clear_text"
             app:errorEnabled="true">
 
@@ -87,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btn_signup"
-            android:text="sign user up"
+            android:text="Complete User Request"
             android:textAllCaps="false"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
