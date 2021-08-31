@@ -46,34 +46,40 @@ class MainActivity : AppCompatActivity() {
      */
     private fun validatePassword(): Boolean {
         if (binding.txtInputEditPass.text.toString().trim().isEmpty()) {
-
+            binding.txtLayoutPass.error = "Excuse me sir, this is a required field"
+            binding.txtInputEditPass.requestFocus()
             return false
         } else {
-
+            binding.txtLayoutPass.isErrorEnabled = false
         }
         return true
     }
 
     private fun validateEmail(): Boolean {
         if (binding.txtInputEditEmail.text.toString().trim().isEmpty()) {
-
+            binding.txtLayoutEmail.error = "Excuse me sir, this is a required field"
+            binding.txtInputEditEmail.requestFocus()
             return false
         } else {
-           
+            binding.txtLayoutEmail.isErrorEnabled = false
+
         }
         return true
     }
 
     private fun validateName(): Boolean {
-
+        //validate first & last name
         if (binding.txtInputEditFname.text.toString().trim().isEmpty()) {
-
+            binding.txtLayoutFname.error = "Excuse me sir, this is a required field"
+            binding.txtInputEditFname.requestFocus()
             return false
         } else if (binding.txtInputEditLname.text.toString().trim().isEmpty()) {
-
+            binding.txtLayoutLname.error = "Excuse me sir, this is a required field"
+            binding.txtInputEditLname.requestFocus()
             return false
         } else {
-
+            binding.txtLayoutFname.isErrorEnabled = false
+            binding.txtLayoutLname.isErrorEnabled = false
         }
         return true
     }
@@ -83,16 +89,29 @@ class MainActivity : AppCompatActivity() {
      */
     inner class ValidateFieldChange(private val view: View) : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            TODO("Not yet implemented")
+
         }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             //check the elements of each fields and apply response.
-            TODO("Not yet implemented")
+            when (view.id) {
+                R.id.txtInput_edit_fname -> {
+                    validateName()
+                }
+                R.id.txtInput_edit_lname -> {
+                    validateName()
+                }
+                R.id.txtInput_edit_email -> {
+                    validateEmail()
+                }
+                R.id.txtInput_edit_pass -> {
+                    validatePassword()
+                }
+            }
         }
 
         override fun afterTextChanged(s: Editable?) {
-            TODO("Not yet implemented")
+
         }
     }
 }
