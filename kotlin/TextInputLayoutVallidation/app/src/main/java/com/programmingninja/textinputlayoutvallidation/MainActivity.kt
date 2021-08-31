@@ -18,13 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.txtInputEditEmail.addTextChangedListener(ValidateFieldChange(binding.txtInputEditEmail))
-        binding.txtInputEditFname.addTextChangedListener(ValidateFieldChange(binding.txtInputEditFname))
-        binding.txtInputEditLname.addTextChangedListener(ValidateFieldChange(binding.txtInputEditLname))
-        binding.txtInputEditPass.addTextChangedListener(ValidateFieldChange(binding.txtInputEditPass))
+        layoutListener()
 
         binding.btnSignup.setOnClickListener {
-
             //review validation on fields
             if (fieldValidation()) {
                 Snackbar.make(it, "validated", Snackbar.LENGTH_SHORT).show()
@@ -32,10 +28,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //listener for the editText
+    private fun layoutListener() {
+        binding.txtInputEditEmail.addTextChangedListener(ValidateFieldChange(binding.txtInputEditEmail))
+        binding.txtInputEditFname.addTextChangedListener(ValidateFieldChange(binding.txtInputEditFname))
+        binding.txtInputEditLname.addTextChangedListener(ValidateFieldChange(binding.txtInputEditLname))
+        binding.txtInputEditPass.addTextChangedListener(ValidateFieldChange(binding.txtInputEditPass))
+    }
+
     /**
      * validate fields
      */
-
     private fun  fieldValidation() : Boolean = validateName() && validateEmail() && validatePassword()
 
     /**
