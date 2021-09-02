@@ -1,14 +1,19 @@
 package com.programmingninja.textinputlayoutvallidation
 
+import android.app.Activity
+import android.content.Context
+import android.hardware.input.InputManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
 import com.programmingninja.textinputlayoutvallidation.ValidateMe.validEmailFormat
 import com.programmingninja.textinputlayoutvallidation.ValidateMe.validPasswordFormat
+import com.programmingninja.textinputlayoutvallidation.ValidateMe.validStringFormat
 import com.programmingninja.textinputlayoutvallidation.databinding.ActivityMainBinding
 import java.util.regex.Pattern
 
@@ -26,9 +31,16 @@ class MainActivity : AppCompatActivity() {
         binding.btnSignup.setOnClickListener {
             //review validation on fields
             if (fieldValidation()) {
-                Snackbar.make(it, "validated", Snackbar.LENGTH_SHORT).show()
+                hideKeyboard(it)
+                val snacking = Snackbar.make(it, "validated", Snackbar.LENGTH_SHORT)
+                snacking.show()
             }
         }
+    }
+
+    fun Context.hideKeyboard(view: View) {
+        val input = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        input.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
     //listener for the editText
@@ -89,6 +101,9 @@ class MainActivity : AppCompatActivity() {
             binding.txtLayoutFname.error = "Excuse me sir, this is a required field"
             binding.txtInputEditFname.requestFocus()
             return false
+        } else if (!validStringFormat(binding.txtInputEditFname.text.toString())) {
+            binding.txtLayoutFname.error = "Excuse me sir, password does not meet expectation"
+            binding.txtInputEditFname.requestFocus()
         } else {
             binding.txtLayoutFname.isErrorEnabled = false
         }
@@ -101,6 +116,9 @@ class MainActivity : AppCompatActivity() {
             binding.txtLayoutLname.error = "Excuse me sir, this is a required field"
             binding.txtInputEditLname.requestFocus()
             return false
+        } else if (!validStringFormat(binding.txtInputEditLname.text.toString())) {
+            binding.txtLayoutLname.error = "Excuse me sir, password does not meet expectation"
+            binding.txtInputEditLname.requestFocus()
         } else {
             binding.txtLayoutLname.isErrorEnabled = false
         }
@@ -163,6 +181,10 @@ object ValidateMe {
 
     fun validStringFormat(name: String): Boolean {
 
-        return true
+        if (name.length >= 5 ) {
+            return true
+        }
+        return false
+
     }
 }
