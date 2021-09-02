@@ -11,10 +11,10 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
-import com.programmingninja.textinputlayoutvallidation.ValidateMe.validEmailFormat
-import com.programmingninja.textinputlayoutvallidation.ValidateMe.validPasswordFormat
-import com.programmingninja.textinputlayoutvallidation.ValidateMe.validStringFormat
 import com.programmingninja.textinputlayoutvallidation.databinding.ActivityMainBinding
+import com.programmingninja.textinputlayoutvallidation.helper.ValidateFormat.validEmailFormat
+import com.programmingninja.textinputlayoutvallidation.helper.ValidateFormat.validPasswordFormat
+import com.programmingninja.textinputlayoutvallidation.helper.ValidateFormat.validStringFormat
 import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
@@ -154,37 +154,5 @@ class MainActivity : AppCompatActivity() {
         override fun afterTextChanged(s: Editable?) {
 
         }
-    }
-}
-
-object ValidateMe {
-
-    val EMAIL_ADDRESS_PATTERN = Pattern.compile("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
-                "\\@" +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
-                "(" +
-                "\\." +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
-                ")+")
-    val PASSWORD_PATTERN = Pattern.compile("^[a-zA-Z0-9_-]*\$")
-
-    /**
-     * confirm email formatted correctly
-     */
-    fun validEmailFormat(email: String): Boolean {
-        return EMAIL_ADDRESS_PATTERN.matcher(email).matches()
-    }
-
-    fun validPasswordFormat(pwd: String): Boolean {
-        return PASSWORD_PATTERN.matcher(pwd).matches()
-    }
-
-    fun validStringFormat(name: String): Boolean {
-
-        if (name.length >= 5 ) {
-            return true
-        }
-        return false
-
     }
 }
