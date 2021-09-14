@@ -88,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         } else if (!validEmailFormat(binding.txtInputEditEmail.text.toString())) {
             binding.txtLayoutEmail.error = "Excuse me sir, password does not meet expectation"
             binding.txtInputEditEmail.requestFocus()
+            return false
         } else {
             binding.txtLayoutEmail.isErrorEnabled = false
 
@@ -104,6 +105,7 @@ class MainActivity : AppCompatActivity() {
         } else if (!validStringFormat(binding.txtInputEditFname.text.toString())) {
             binding.txtLayoutFname.error = "Excuse me sir, password does not meet expectation"
             binding.txtInputEditFname.requestFocus()
+            return false
         } else {
             binding.txtLayoutFname.isErrorEnabled = false
         }
@@ -119,6 +121,7 @@ class MainActivity : AppCompatActivity() {
         } else if (!validStringFormat(binding.txtInputEditLname.text.toString())) {
             binding.txtLayoutLname.error = "Excuse me sir, password does not meet expectation"
             binding.txtInputEditLname.requestFocus()
+            return false
         } else {
             binding.txtLayoutLname.isErrorEnabled = false
         }
