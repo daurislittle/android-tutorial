@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">In App Review</string>
+    <string name="app_title">In App Review</string>
+    <string name="app_user_message">I hope you are enjoying the app, please take a moment to rate us in PlayStore \n Thank you for your support!</string>
+    <string name="app_btn_neutral">Pardon, Maybe Later</string>
+    <string name="app_btn_negative">No, Thank You</string>
+    <string name="app_btn_positive">Sure, Can\'t Wait</string>
+    <string name="app_btn_message">Attempt Rating </string>
+</resources>
