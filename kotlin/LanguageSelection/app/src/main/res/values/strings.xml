@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Language Selection</string>
-    <string name="tv_language_msg">Message for user</string>
+    <string name="tv_language_msg">Message for user. I have updated the app locale</string>
+    <string name="txt_lang_jap">Japanese</string>
+    <string name="txt_lang_esp">Spanish</string>
+    <string name="txt_title">Hello World!</string>
 </resources>
