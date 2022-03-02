@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_language_msg">ユーザーへのメッセージ。アプリのロケールを更新しました</string>
+    <string name="txt_lang_jap">日本</string>
+    <string name="txt_lang_esp">英語</string>
+    <string name="txt_title">"こんにちは世界"</string>
+</resources>

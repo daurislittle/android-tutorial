@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_language_msg">Mensaje para el usuario. He actualizado la configuración regional de la aplicación.</string>
+    <string name="txt_lang_jap">Japonés</string>
+    <string name="txt_lang_esp">Español</string>
+    <string name="txt_title">Hola Mundo!</string>
+</resources>
