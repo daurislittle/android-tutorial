@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QR Reader</string>
+    <string name="txt_app_message">Tap Button Below to Begin Scanning!</string>
 </resources>

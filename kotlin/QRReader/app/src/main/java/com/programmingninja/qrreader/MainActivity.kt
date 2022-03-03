@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity() {
         val imgBtn:AppCompatImageButton = findViewById(R.id.img_btn_qr)
 
         imgBtn.setOnClickListener {
-            val intentIntegrator = IntentIntegrator(this)
+            val iIntegrator = IntentIntegrator(this)
 
-            intentIntegrator.setDesiredBarcodeFormats(listOf(IntentIntegrator.QR_CODE))
-            intentIntegrator.initiateScan()
+            iIntegrator.setDesiredBarcodeFormats(listOf(IntentIntegrator.QR_CODE))
+            iIntegrator.initiateScan()
         }
     }
 
@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         val res = IntentIntegrator.parseActivityResult(resultCode,data)
 
         if (res != null) {
-            AlertDialog.Builder(this).setMessage("Would you like to go to ${res.contents}?")
+            AlertDialog.Builder(this)
+                .setMessage("Would you like to go to ${res.contents}?")
                 .setPositiveButton("Accept", DialogInterface.OnClickListener{
                     dialogInterface, i -> val intent = Intent(Intent.ACTION_WEB_SEARCH)
                     intent.putExtra(SearchManager.QUERY, res.contents)
