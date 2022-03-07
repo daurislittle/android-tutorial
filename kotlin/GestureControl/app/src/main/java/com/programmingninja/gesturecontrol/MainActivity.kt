@@ -93,10 +93,8 @@ class MainActivity : AppCompatActivity() {
         override fun onFling(evt1: MotionEvent, evt2: MotionEvent, xVelocity: Float, yVelocity: Float) : Boolean {
 
             pts -= 75
-            questionValue1 = Random.nextInt(15)
-            questionValue2 = Random.nextInt(25)
+            generateQuestion(13)
             view.setBackgroundColor(Random.nextInt())
-            qv.text = "$questionValue1 + $questionValue2"
 
             Snackbar.make(view, "Skipped", Snackbar.LENGTH_SHORT).show()
             cv.text = "Current Score: $pts"
