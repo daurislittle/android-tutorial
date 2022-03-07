@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Gestures Control</string>
+    <string name="txt_string_score">Current Score: 0</string>
+    <string name="txt_minus_descriptor">decrease answer response</string>
+    <string name="txt_add_descriptor">increase answer response</string>
+    <string name="txt_answer_value">0</string>
+    <string name="txt_question_value">2 + 2</string>
 </resources>
