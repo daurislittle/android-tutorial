@@ -1,4 +1,13 @@
 package com.programmingninja.dagger2tutorial.helper;
 
-public class MyComponent {
+import com.programmingninja.dagger2tutorial.MainActivity;
+
+import javax.inject.Singleton;
+
+import dagger.Component;
+
+@Singleton
+@Component(modules = {SharePrefModule.class})
+public interface MyComponent {
+    void inject(MainActivity ma);
 }
