@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         override fun onFling(evt1: MotionEvent, evt2: MotionEvent, xVelocity: Float, yVelocity: Float) : Boolean {
 
             pts -= 75
-            generateQuestion(13)
+            generateQuestion(userAnsw)
             view.setBackgroundColor(Random.nextInt())
 
             Snackbar.make(view, "Skipped", Snackbar.LENGTH_SHORT).show()
@@ -105,17 +105,14 @@ class MainActivity : AppCompatActivity() {
 
         override fun onDoubleTap(evt: MotionEvent?): Boolean {
 
-            if (userAnsw == questionValue1 + questionValue2) {
-                pts = 100*125
-
-                generateQuestion(7)
-            } else {
+            if (userAnsw == questionValue1 + questionValue2) pts = 100*125
+            else {
                 pts -= 125
-                generateQuestion(15)
                 view.setBackgroundColor(Color.RED)
                 Snackbar.make(view, "Incorrect", Snackbar.LENGTH_SHORT).show()
-
             }
+
+            generateQuestion(userAnsw)
             cv.text = "Current Score: $pts"
             return true
         }
