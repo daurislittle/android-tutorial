@@ -20,13 +20,13 @@ public class SharePrefModule {
     @Singleton
     @Provides
     public Context provideContext() {
-        return cx
+        return cx;
     }
 
     @Singleton
     @Provides
     public SharedPreferences provideSharedPreferences(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context)
+        return PreferenceManager.getDefaultSharedPreferences(context);
     }
 
 }
