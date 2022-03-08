@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_headerTitle"
             android:text="Dagger Tutorial"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:textAlignment="center" />
 
         <androidx.appcompat.widget.AppCompatImageView
