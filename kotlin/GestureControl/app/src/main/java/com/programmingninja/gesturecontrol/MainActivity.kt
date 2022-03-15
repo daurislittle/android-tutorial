@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //lets do some work
-        view = findViewById<FrameLayout>(R.id.layout_parent)
+        view = findViewById(R.id.layout_parent)
         qv =  findViewById(R.id.tv_question)
         sv = findViewById(R.id.tv_solution)
         cv = findViewById(R.id.tv_points)
