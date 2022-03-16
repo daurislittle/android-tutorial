@@ -3,10 +3,13 @@ package com.programmingninja.appnotification.helper
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.programmingninja.appnotification.NotificationViewActivity
 import com.programmingninja.appnotification.R
 
 class Notifier(val context: Context) {
@@ -32,11 +35,20 @@ class Notifier(val context: Context) {
     }
 
     private fun notificationCreate(title: String, content: String) : Notification {
+        val intent = Intent(context, NotificationViewActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+
+        intent.putExtra("title", title)
+
+        val requested = title.hashCode()
+        val pIntent = PendingIntent.getActivity(context, requested, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         val nBuilder = NotificationCompat.Builder(context, channelIdName)
         nBuilder.setSmallIcon(R.mipmap.ic_launcher_round)
         nBuilder.setContentTitle(title)
         nBuilder.setContentText(content)
+        nBuilder.setContentIntent(pIntent)
         nBuilder.priority = NotificationCompat.PRIORITY_DEFAULT
 
         return nBuilder.build()
