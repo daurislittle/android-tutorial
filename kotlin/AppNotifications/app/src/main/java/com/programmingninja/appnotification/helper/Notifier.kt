@@ -48,7 +48,7 @@ class Notifier(val context: Context) {
         with(NotificationManagerCompat.from(context)) {
             val nIdentifier = title.hashCode()
             //notify("", 1800, createNotification)
-            notify(1800, createNotification)
+            notify(nIdentifier, createNotification)
         }
     }
 }
