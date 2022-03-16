@@ -20,10 +20,8 @@ class NotificationService : Service() {
             notify.notificationSend(noteTitle, noteContent)
         }
 
-        val handler = Handler().postDelayed(
-            runnable,
-            1000 * noteDelayed
-        )
+        Handler().postDelayed(runnable,10000 * noteDelayed)
+
         return START_STICKY
     }
 }
