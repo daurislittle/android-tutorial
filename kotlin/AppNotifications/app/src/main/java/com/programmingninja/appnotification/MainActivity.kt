@@ -14,23 +14,28 @@ class MainActivity : AppCompatActivity() {
     //global variables
     lateinit var notificationTitle: AppCompatEditText
     lateinit var delayTimer: AppCompatEditText
-    lateinit var schedule: AppCompatButton
-    lateinit var view: ConstraintLayout
+    lateinit var scheduleBtn: AppCompatButton
+    lateinit var parent: ConstraintLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
     }
 
     fun scheduleAlert(view: View){
         notificationTitle =  findViewById(R.id.et_messageTitle)
         delayTimer = findViewById(R.id.et_setTimer)
-
-        Snackbar.make(view, "Reminder is now set for: $notificationTitle", Snackbar.LENGTH_LONG).show()
+        parent = findViewById(R.id.rootLayer)
 
         val notify = Notifier(this)
         notify.notificationSend(notificationTitle.text.toString(), "Pardon sir this is the reminder notification requested")
+
+        Snackbar.make(parent, "Reminder is now set for: ${notificationTitle.text}", Snackbar.LENGTH_LONG).show()
+
+
+
         notificationTitle.text?.clear()
         delayTimer.text?.clear()
     }
