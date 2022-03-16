@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, NotificationService::class.java)
 
-        intent.putExtra("title", notificationTitle.text)
+        intent.putExtra("title", notificationTitle.text.toString())
         intent.putExtra("content", "Pardon sir this is the reminder notification requested")
-        intent.putExtra("delayed", delayTimer.text)
+        intent.putExtra("delayed", delayTimer.text.toString().toLongOrNull())
 
         startService(intent)
 
