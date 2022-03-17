@@ -49,6 +49,7 @@ class Notifier(val context: Context) {
         nBuilder.setContentTitle(title)
         nBuilder.setContentText(content)
         nBuilder.setContentIntent(pIntent)
+        nBuilder.setAutoCancel(true) 
         nBuilder.priority = NotificationCompat.PRIORITY_DEFAULT
 
         return nBuilder.build()
