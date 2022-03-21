@@ -1,6 +1,6 @@
 package com.programmingninja.userinputvalidation.helper.validator
 
-class BaseValidation {
+abstract class BaseValidation {
     companion object {
         fun validate(vararg iValidator: IValidator): Validate {
             iValidator.forEach {
