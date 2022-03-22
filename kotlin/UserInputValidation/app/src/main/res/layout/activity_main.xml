@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_Title"
-        android:text="New Sign Up Form"
+        android:text="@string/txt_title_tv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gl_guidelines" />
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/iet_firstname"
             android:singleLine="true"
-            android:hint="first name"
-            android:inputType="text"/>
+            android:hint="@string/txt_fName_et"
+            android:inputType="text|textPersonName"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,8 +58,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/iet_lastname"
             android:singleLine="true"
-            android:hint="last name"
-            android:inputType="text"/>
+            android:hint="@string/txt_lName_et"
+            android:inputType="text|textPersonName"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/iet_username"
             android:singleLine="true"
-            android:hint="Username"
+            android:hint="@string/txt_uName_et"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,8 +98,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/iet_email"
             android:singleLine="true"
-            android:hint="Email"
-            android:inputType="text"/>
+            android:hint="@string/txt_email_et"
+            android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -118,8 +118,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/iet_pass"
             android:singleLine="true"
-            android:hint="Password"
-            android:inputType="text"/>
+            android:hint="@string/txt_pass_et"
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -138,15 +138,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/iet_passConfirm"
             android:singleLine="true"
-            android:hint="Confirm Password"
-            android:inputType="text"/>
+            android:hint="@string/txt_confirm_pass_et"
+            android:inputType="textWebPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/txt_register_et"
         android:textAllCaps="true"
         android:layout_marginTop="32dp"
         app:layout_constraintRight_toLeftOf="parent"
@@ -157,7 +157,7 @@
         android:id="@+id/btn_signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="@string/txt_signIn_et"
         android:textAllCaps="true"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="@+id/til_passConfirm"
