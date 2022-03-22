@@ -11,4 +11,13 @@
     <string name="txt_validation_email_error">Email is not formatted correctly</string>
 
     <string name="txt_layout_missing">Layout has not be setup yet</string>
+    <string name="txt_title_tv">New Sign Up Form</string>
+    <string name="txt_fName_et">First Name</string>
+    <string name="txt_lName_et">Last Name</string>
+    <string name="txt_uName_et">Username</string>
+    <string name="txt_email_et">Email</string>
+    <string name="txt_pass_et">Password</string>
+    <string name="txt_confirm_pass_et">Confirm Password</string>
+    <string name="txt_register_et">Register</string>
+    <string name="txt_signIn_et">Sign In</string>
 </resources>
