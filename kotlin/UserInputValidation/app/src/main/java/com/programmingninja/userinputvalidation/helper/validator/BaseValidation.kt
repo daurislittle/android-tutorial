@@ -1,6 +1,9 @@
 package com.programmingninja.userinputvalidation.helper.validator
 
-abstract class BaseValidation {
+import com.programmingninja.userinputvalidation.helper.EmptyValidator
+import com.programmingninja.userinputvalidation.helper.ValidateEmail
+
+abstract class BaseValidation: IValidator {
     companion object {
         fun validate(vararg iValidator: IValidator): Validate {
             iValidator.forEach {
