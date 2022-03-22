@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.programmingninja.userinputvalidation.databinding.ActivityMainBinding
-import com.programmingninja.userinputvalidation.helper.EmptyValidator
 import com.programmingninja.userinputvalidation.helper.ValidateEmail
+import com.programmingninja.userinputvalidation.helper.ValidateEmpty
 import com.programmingninja.userinputvalidation.helper.ValidatePassword
 import com.programmingninja.userinputvalidation.helper.validator.BaseValidation
 
@@ -27,20 +27,20 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSignUp.setOnClickListener {
             val usernameInput = binding.ietUsername.text.toString().trim()
-            val userValidationCheck = EmptyValidator(usernameInput).validate()
+            val userValidationCheck = ValidateEmpty(usernameInput).validate()
             binding.tilUserName.error = if (!userValidationCheck.status) getString(userValidationCheck.msg) else null
 
             val firstNameInput = binding.ietFirstname.text.toString().trim()
-            val firstValidationCheck = EmptyValidator(firstNameInput).validate()
+            val firstValidationCheck = ValidateEmpty(firstNameInput).validate()
             binding.tilFirstName.error = if (!firstValidationCheck.status) getString(firstValidationCheck.msg) else null
 
             val lastNameInput = binding.ietLastname.text.toString().trim()
-            val lastValidationCheck = EmptyValidator(lastNameInput).validate()
+            val lastValidationCheck = ValidateEmpty(lastNameInput).validate()
             binding.tilLastName.error = if (!lastValidationCheck.status) getString(lastValidationCheck.msg) else null
 
             val passwordInput = binding.ietPass.text.toString().trim()
             val cPasswordInput = binding.ietPassConfirm.text.toString().trim()
-            val passValidationCheck = BaseValidation.validate(EmptyValidator(passwordInput), ValidatePassword(passwordInput))
+            val passValidationCheck = BaseValidation.validate(ValidateEmpty(passwordInput), ValidatePassword(passwordInput))
             if (passwordInput == cPasswordInput)  {
                 binding.tilPass.error = if (!passValidationCheck.status) getString(passValidationCheck.msg) else null
             } else {
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             val emailInput = binding.ietEmail.text.toString().trim()
-            val emailValidationCheck = BaseValidation.validate(EmptyValidator(emailInput), ValidateEmail(emailInput))
+            val emailValidationCheck = BaseValidation.validate(ValidateEmpty(emailInput), ValidateEmail(emailInput))
             binding.tilEmail.error = if (!emailValidationCheck.status) getString(emailValidationCheck.msg) else null
 
         }
