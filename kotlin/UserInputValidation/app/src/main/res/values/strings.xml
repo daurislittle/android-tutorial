@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">User Input Validation</string>
+    <string name="txt_validation_success">User Input Validation</string>
+    <string name="txt_validation_error">Please fill this empty field</string>
+
+    <string name="txt_validation_pass_error_small">Password is not long enough </string>
+    <string name="txt_validation_pass_error_long">Password is too long</string>
+    <string name="txt_validation_pass_error_mismatch">Password do not match </string>
+    <string name="txt_validation_pass_error_special">Password needs at least 1 uppercase or lowercase or numeric or special character</string>
+
+    <string name="txt_validation_email_error">Email is not formatted correctly</string>
+
+    <string name="txt_layout_missing">Layout has not be setup yet</string>
 </resources>
