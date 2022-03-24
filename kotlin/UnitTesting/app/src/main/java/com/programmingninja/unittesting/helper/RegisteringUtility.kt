@@ -2,7 +2,7 @@ package com.programmingninja.unittesting.helper
 
 object RegisteringUtility {
 
-        private val UserExist = listOf("James","Randall","Bruce", "Ryan")
+        private val existingUsernames = listOf("PokemonMaster","SuperSayain871","BatmanvsSuperman", "kid_Flash123")
 
         /**
          *
